@@ -1,0 +1,229 @@
+[
+  {
+    "name": "Active Share",
+    "code": "ACTIVE_SHARE",
+    "stageEnv": true,
+    "prodEnv": true,
+    "status": true,
+    "schemaJson": {}
+  },
+  {
+    "name": "AIVA",
+    "code": "AIVA",
+    "stageEnv": false,
+    "prodEnv": true,
+    "status": true,
+    "schemaJson": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "CARD_TYPE",
+          "type": "string",
+          "default": "sliding",
+          "enum": [
+            "sliding",
+            "bimodal",
+            "inline",
+            "overlay"
+          ],
+          "enumNames": [
+            "CARD_TYPE_SLIDING",
+            "CARD_TYPE_BIMODAL",
+            "CARD_TYPE_INLINE",
+            "CARD_TYPE_OVERLAY"
+          ]
+        },
+        "invoke": {
+          "title": "CARD_INVOKE_BUTTON_TITLE",
+          "description": "CARD_INVOKE_BUTTON_DESC",
+          "type": "object",
+          "properties": {
+            "title": {
+              "title": "CARD_INVOKE_BUTTON_TEXT_TITLE",
+              "description": "CARD_INVOKE_BUTTON_TEXT",
+              "type": "string"
+            },
+            "image": {
+              "title": "CARD_INVOKE_BUTTON_IMAGE_TITLE",
+              "description": "CARD_INVOKE_BUTTON_IMAGE_DESC",
+              "type": "string"
+            },
+            "auto": {
+              "title": "CARD_INVOKE_AUTO_TITLE",
+              "description": "CARD_INVOKE_AUTO_DESC",
+              "type": "boolean",
+              "enum": [
+                true,
+                false
+              ],
+              "default": false
+            }
+          },
+          "dependencies": {
+            "auto": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "auto": {
+                      "enum": [
+                        true
+                      ]
+                    },
+                    "delay": {
+                      "title": "CARD_INVOKE_AUTO_DELAY_TITLE",
+                      "description": "CARD_INVOKE_AUTO_DELAY_DESC",
+                      "type": "number"
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "auto": {
+                      "enum": [
+                        false
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "systemMessage": {
+          "title": "CARD_SYSTEM_MSG_TITLE",
+          "description": "CARD_SYSTEM_MSG_DESC",
+          "type": "string"
+        },
+        "isPCF": {
+          "title": "CARD_TRIGGER_EVENT_PRECHAT_TITLE",
+          "type": "boolean",
+          "default": false
+        },
+        "isCES": {
+          "title": "CARD_TRIGGER_EVENT_SURVEY_TITLE",
+          "type": "boolean",
+          "default": false
+        },
+        "processOnServer": {
+          "title": "CARD_DYNAMIC_TITLE",
+          "type": "boolean",
+          "description": "CARD_DYNAMIC_DESC",
+          "default": false
+        }
+      }
+    }
+  },
+  {
+    "name": "Chat",
+    "code": "CHAT",
+    "stageEnv": false,
+    "prodEnv": true,
+    "status": true,
+    "schemaJson": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "CARD_TYPE",
+          "type": "string",
+          "default": "sliding",
+          "enum": [
+            "sliding",
+            "bimodal",
+            "inline",
+            "overlay"
+          ],
+          "enumNames": [
+            "CARD_TYPE_SLIDING",
+            "CARD_TYPE_BIMODAL",
+            "CARD_TYPE_INLINE",
+            "CARD_TYPE_OVERLAY"
+          ]
+        },
+        "invoke": {
+          "title": "CARD_INVOKE_BUTTON_TITLE",
+          "description": "CARD_INVOKE_BUTTON_DESC",
+          "type": "object",
+          "properties": {
+            "title": {
+              "title": "CARD_INVOKE_BUTTON_TEXT_TITLE",
+              "description": "CARD_INVOKE_BUTTON_TEXT",
+              "type": "string"
+            },
+            "image": {
+              "title": "CARD_INVOKE_BUTTON_IMAGE_TITLE",
+              "description": "CARD_INVOKE_BUTTON_IMAGE_DESC",
+              "type": "string"
+            },
+            "auto": {
+              "title": "CARD_INVOKE_AUTO_TITLE",
+              "description": "CARD_INVOKE_AUTO_DESC",
+              "type": "boolean",
+              "enum": [
+                true,
+                false
+              ],
+              "default": false
+            }
+          },
+          "dependencies": {
+            "auto": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "auto": {
+                      "enum": [
+                        true
+                      ]
+                    },
+                    "delay": {
+                      "title": "CARD_INVOKE_AUTO_DELAY_TITLE",
+                      "description": "CARD_INVOKE_AUTO_DELAY_DESC",
+                      "type": "number"
+                    }
+                  }
+                },
+                {
+                  "properties": {
+                    "auto": {
+                      "enum": [
+                        false
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "systemMessage": {
+          "title": "CARD_SYSTEM_MSG_TITLE",
+          "description": "CARD_SYSTEM_MSG_DESC",
+          "type": "string"
+        },
+        "isPCF": {
+          "title": "CARD_TRIGGER_EVENT_PRECHAT_TITLE",
+          "type": "boolean",
+          "default": false
+        },
+        "isCES": {
+          "title": "CARD_TRIGGER_EVENT_SURVEY_TITLE",
+          "type": "boolean",
+          "default": false
+        },
+        "processOnServer": {
+          "title": "CARD_DYNAMIC_TITLE",
+          "type": "boolean",
+          "description": "CARD_DYNAMIC_DESC",
+          "default": false
+        }
+      }
+    }
+  },
+  {
+    "name": "Facebook Messenger",
+    "code": "FB_MESSENGER",
+    "stageEnv": false,
+    "prodEnv": true,
+    "status": true
+  }
+]
